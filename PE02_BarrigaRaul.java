@@ -3,6 +3,9 @@ import java.util.Scanner;
 public class PE02_BarrigaRaul {
     public static void main(String[] args) {
         Scanner fc = new Scanner(System.in);
+        System.out.println("");
+        System.out.println("Joc creat per Raúl Barriga");
+        System.out.println("");
         System.out.println("Ets un futbolista en un partit decisiu per guanyar la champions i en un atac del rival existeix el risc de que marquin.");
         System.out.println("");
         System.out.println("Fas falta? (true/false): ");
@@ -26,14 +29,15 @@ public class PE02_BarrigaRaul {
             System.out.println("La jugada la feu conjunta");
             System.out.println("");
             System.out.println("El teu company et retorna la pilota i com el porter no estaba pendent de tu marques");
+            System.out.println("");
             System.out.println("Per la emocio del gol en l'ultim minut et treus la samarreta");
             System.out.println("");
             if (tarjeta_groga) {
-                System.out.println("Per reglament reps una altre tarjeta groga terminant en expulsio pero heu guanyat (Final)");
+                System.out.println("Per reglament reps una altre tarjeta groga terminant en expulsio pero heu guanyat (Good Ending)");
                 
             }
             else {
-                System.out.println("Reps una tarjeta groga pero heu guanyat (Final)");
+                System.out.println("Reps una tarjeta groga pero heu guanyat (Good Ending)");
             }
         } else {
             System.out.println("Continues la jugada tu mateix");
@@ -45,7 +49,7 @@ public class PE02_BarrigaRaul {
             fc.nextLine();
             boolean xut_lluny = xut;
             if (xut_lluny) {
-                System.out.println("Fots un gol desde fora de l'area marcant el gol de la victoria (Final)");
+                System.out.println("Fots un gol desde fora de l'area marcant el gol de la victoria (Perfect Ending)");
             }
             else {
                 System.out.println("Decideixes aproparte pero ara els rivals han tingut temps per poder pressionar");
@@ -58,19 +62,19 @@ public class PE02_BarrigaRaul {
                 boolean xut_pressio = xutp;
                 boolean banquillo = xut_pressio || tarjeta_groga;
 
-                if (xut_pressio) {
-                    System.out.println("Per la pressió falles i el rival fa un contraatac que acaba en gol i perds (Final)");
-
-                }
-                else if (banquillo) {
-                    System.out.println("Falles i per el teu rendiment el entrenador et treu del camp (Final)");
+                if (falta) {
+                    System.out.println("Falles i per el teu rendiment el entrenador et treu del camp (Por Motivao Ending)");
                     
                 }
+                else if (xut_pressio) {
+                    System.out.println("Per la pressió falles i el rival fa un contraatac que acaba en gol i perds (Bad Ending)");
+                }
                 else {
-                    System.out.println("En el intent de regatejar un rival et comet falta i acabas lessionat (Final)");
+                    System.out.println("En el intent de regatejar un rival et comet falta i acabas lessionat (Bad Ending)");
                 }
             }
         }
         
+        fc.close();
     }
 }
